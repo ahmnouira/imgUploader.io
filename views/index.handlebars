@@ -1,0 +1,56 @@
+
+      <div class="card">
+        <div class="bg-info text-white card-header">
+          <h3 class="card-title">
+            Upload an Image
+          </h3>
+        </div>
+        <form method="post" action="/images" enctype="multipart/form-data">
+          <div class="card-body">
+              <div class="form-group col-md-12">
+                <label class="col-sm-2 " for="file">Browse:</label>
+                <div class="col-sm-12">
+                <input class="form-control-file border" type="file" name="file" id="file">
+                </div>
+              </div>
+
+                <div class="form-group col-md-12">
+                  <label class="col-md-8" for="title">Title:</label>
+            <div class="col-md-12">
+              <input class="form-control" type="text" name="title">
+                </div>
+                </div>
+
+                  <div class="form-group col-md-12">
+                    <label class="col-md-8" for="description">Description:</label>
+                      <div class="col-md-12">
+                        <textarea class="form-control" name="description" rows="2"></textarea>
+                      </div>
+                    </div>
+
+<div class="form-group col-md-12">
+<div class="col-md-12 text-right">
+  <button type="submit" id="login-btn" class="btn btn-success" type="button">
+<i class="fa fa-upload">
+</i> Upload Image</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+<br>
+<div class="card bg-light">
+<div class="card-header">
+<h3 class="card-title">
+  Newest Images
+</h3>
+</div>
+<div class="card-body">
+{{#each images}}
+<div class="col-md-4 text-center" style="padding-bottom:1em;">
+<a href="/images/{{ uniqueId }}"><img src="/public/upload/{{filename}}" alt="{{title}}" style="width: 175px; height: 175px;" class="img-thumbnail"></a>
+</div>
+{{/each}}
+</div>
+</div>
+<br>
