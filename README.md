@@ -19,11 +19,10 @@ This app is designed to be run in different ways:
 ## I. As a standalone app running on your machine
 
 1. run `git clone https://github.com/AhmNouira/imgUploader.io` to clone the GitHub repository.
-2. `cd imgUploader.od` cd to *imgUploader* folder.
+2. `cd imgUploader.od` cd to **imgUploader** folder.
 3. install [node.js](https://nodejs.org/en/download/) or run `apt-get install nodejs`.
-4. run `node -v && npm -v` to check if *nodejs* and *npm* are installed and prints their versions.
+4. run `node -v && npm -v` to check if **nodejs** and **npm** are installed and prints their versions.
 5. install the app dependices by running `npm install`.
-6. `npm start` to run ther serevr 
-5. to run the server `npm start`
+6. to run the server `npm start`.
 
 ![start_server](/img/start_server.png)
