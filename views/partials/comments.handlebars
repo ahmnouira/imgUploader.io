@@ -6,14 +6,14 @@
     <ul class="lsit-unstyled">
       {{#each sidebar.comments}}
 <li class="media">
-<a class="pull-left" href="/images/{{ image.uniqueId }}">
-<img class="media-object" width="45" height="45" src="/public/upload/{{ image.filename }}">
+<a class="pull-left" href="/images/{{ image.id }}">
+<img  title="{{image.title}}" alt="{{image.title}}" class="media-object" width="45" height="45" src="/public/upload/{{ image.filename }}">
 </a>
 <div class="media-body">
-{{comment}}
+{{ comment }}
 <br/>
 <strong class="media-heading">
-{{name}}</strong> <small class="text-muted">
+{{ name }}</strong> <small class="text-muted">
 {{timeago timestamp }}</small>
 </div>
 </li>

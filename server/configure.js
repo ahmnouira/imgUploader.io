@@ -6,15 +6,15 @@ var path = require('path'),
   cookieParser = require('cookie-parser'),
   morgan = require('morgan'),
   methodOverride = require('method-override'),
-  errorhandler =require('errorhandler');
-  moment = require('moment');
+  errorhandler =require('errorhandler'),
+  moment = require('moment'),
+  multer = require('multer'),
+  upload = multer({ dest: path.join(__dirname,'public/upload/temp' ) });
 
   module.exports = function(app) {
     app.use(morgan('dev'));
     app.use(bodyParser.urlencoded({'extended':true}));
-  /*  app.use(bodyParser({
-      uploadDir: path.join(__dirname, 'public/upload/temp')
-    })); */
+    app.use(upload.single('file')); // 'file' must be the same as <form name="file"> in Views
 
     app.use(bodyParser.json());
     app.use(methodOverride());
