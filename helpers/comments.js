@@ -1,47 +1,26 @@
 /* the comments module will return a collection of the newest posted to the site */
 /* each comment also  has an  image attached to it so that  thea actual image for each comment can be displayed */
 
+var models = require('../models');
+var async = require('async');
+
+
 module.exports = {
-  newset: function() {
-    var comments = [
-      {
-        id: 1,
-        email: 'test@gamil.com',
-        name: 'ahmed',
-        gravatar: 'http://lorempixel.com/75/75/animals/1',
-        comment: 'this is a comment',
-        tiemstamp: Date.now(),
+  newest: function(callback) {
+    models.Comment.find({}, {}, {limit: 5, sort:{'timestamp': -1 }},function(err, comments){
+      var attachImage = function(comment, next){
+        models.Image.findOne({_id: comment.image_id},function(err, image){
+          if (err) { throw err; }
+            comment.image = image;
+            next(err);
+          });
+      };
+      async.each(comments, attachImage, function(err){
+        if (err) {throw err;}
+        callback(err, comments);
 
-        image : {
-          id: 1,
-          title: 'image title 1',
-          description: 'desc 1',
-          filename: 'sample1.jpg',
-          views: 3,
-          likes: 0,
-          timestamp: Date.now()
-        }
+      });
+  });
 
-      },{
-        id:2,
-        email: 'ahmednouira@gmail.com',
-        name: 'Ahmed Nouira',
-        gravatar: 'http://lorempixel.com/75/75/animals/2',
-        comment: 'this comment 2',
-        timestamp: Date.now(),
-
-        image: {
-          id:1,
-          title: 1,
-          description: 'desc 2',
-          filename: 'sample2.jpg',
-          views: 0,
-          like: 0,
-          timestamp: Date.now()
-        }
-      }
-    ]
-    return comments;
-  }
-
+}
 };

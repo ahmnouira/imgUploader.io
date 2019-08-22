@@ -1,36 +1,27 @@
 var sidebar = require('../helpers/sidebar') // import sidebar module
+var ImageModel = require('../models').Image;
 
-
-
-var viewModel = {
-  images:[
-    {
-    id: 1,
-    title : 'Sample image 1',
-    description: 'desc 1',
-    filename: 'sample1.jpg',
-    views: 0,
-    likes: 0,
-    timestamp: Date.now
-  },
-    {
-      id:2,
-      title :'Sample image 2',
-      description: 'desc 2',
-      filename: 'sample2.jpg',
-      views: 0,
-      likes: 0,
-      timestamp: Date.now
-  }
-  ]
-}
 
 
 module.exports = {
   index: function(req, res) {
+
+    var viewModel = {
+      images:[]
+    };
+
+    ImageModel.find({}, {}, { sort: {timestamp: -1} }, function(err,images) {
+      if (err) { throw err; }
+      viewModel.images = images;
+
+
     // execute the sidebar module and pass viewModel and basic callback function
     sidebar(viewModel, function(viewModel){
     res.render('index', viewModel);
+    });
   });
 }
-}
+
+
+
+};

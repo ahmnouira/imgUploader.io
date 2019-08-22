@@ -5,9 +5,9 @@
 
 ## Overview
 
-![images](/img/images.png)
-
 ![index](/img/index.png)
+
+![images](/img/images.png)
 
 ## Running this app
 
