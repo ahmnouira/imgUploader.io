@@ -1,6 +1,6 @@
 
-      <div class="card">
-        <div class="bg-secondary text-white card-header border">
+      <div class="card bg-light">
+        <div class="bg-dark text-white card-header ">
           <h3 class="card-title">
             Upload an Image
           </h3>
@@ -42,11 +42,9 @@
           <div class="card bg-light">
             <div class="card-header">
               <h3 class="card-title"> Newest Images </h3></div>
-                <div class="card-body">
+                <div class="card-body col-md-12">
                   {{#each images}}
-                    <div class="col-md-4 text-center" style="padding-bottom:1em;">
-                      <a href="/images/{{ id }}"><img src="/public/upload/{{filename}}" alt="{{title}}" title="{{title}}" class="img-thumbnail" style="width: 175px; height: 175px;"></a>
-                     </div>
+                      <a href="/images/{{ id }}"><img src="/public/upload/{{filename}}" alt="{{title}}" title="{{title}}" class="rounded border border-dark m-1" style="height:140px; width: 161px"></a>
                    {{/each}}
                  </div>
                </div>

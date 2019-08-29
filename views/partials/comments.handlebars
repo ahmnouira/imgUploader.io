@@ -7,12 +7,11 @@
       {{#each sidebar.comments}}
 <li class="media">
 <a class="pull-left" href="/images/{{ image.id }}">
-<img title="{{image.title}}" alt="{{image.title}}" class="media-object rounded" width="45" height="45" src="/public/upload/{{ image.filename }}">
+<img title="{{image.title}}" alt="{{image.title}}" class="media-object rounded border border-dark m-1" width="45" height="45" src="/public/upload/{{ image.filename }}">
 </a>
 <div class="media-body">
-  &nbsp;{{ comment }}
+  {{ comment }}
   <br/>
-    &nbsp;
         <span>by<a href="#" class="text-info text-decoration-none"> {{ name }}</a></span>
         <small class="text-muted"> {{ timeago timestamp }} </small>
 </div>

@@ -4,7 +4,8 @@
   "description": " This is a social image-sharing site developed using MEAN technologies ",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "mocha --require tests/testhelper.js tests/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -34,5 +35,10 @@
     "mongoose": "^5",
     "morgan": "^1.9.1",
     "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "sinon": "^7.4.1",
+    "sinon-chai": "^3.3.0"
   }
 }
