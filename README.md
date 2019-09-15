@@ -45,16 +45,16 @@ show dbs                        // display your databases
 
 use imgUploaderDB               // select the application database
 
-db.printCollectionStats() 	    // print the stats of the db collections
+db.printCollectionStats()     // print the stats of the db collections
 
-db.images.find().pretty()    	  // **display the images collections data**
+db.images.find().pretty()    	// **display the images collections data**
 
-db.comments.find().pretty()	    // **display the comments collections data**
+db.comments.find().pretty()	   // **display the comments collections data**
 
 ```
 
-#### Wanna check Uinit Testing ?
+#### Wanna check Unit Testing ?
 
-* run `npm test`
+* run `npm test`.
 
 ![testing](/img/testing.png)
